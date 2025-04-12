@@ -5,6 +5,18 @@ from typing import List
 
 app = FastAPI()
 
+
+@app.get("/")
+async def root():
+    return {"message": "Welcome to Doki API"}
+
+@app.get("/doc")
+async def dock():
+    return {"message": "This is the doc endpoint"}
+
+
+
+
 # Временное "хранилище" статей
 fake_db = {
     "articles": [
